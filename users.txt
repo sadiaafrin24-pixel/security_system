@@ -1,0 +1,16 @@
+sadia abc123
+sadia abc123
+sadia abc123
+sadia abc123
+sadia abc123
+d "c:\Users\sadia\Security
+ystem\OTP-system\" ;
+f ($?)
+gcc main.c
+o main
+; if
+$?) {
+\main }
+sadia abc123
+sadia abc123
+sadia abc123
