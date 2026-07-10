@@ -159,6 +159,29 @@ void registerUser()
     printf("\nRegistration Successful!\n");
 }
 
+void saveLog(char username[], char status[])
+{
+    FILE *fp;
+    time_t now;
+
+    fp = fopen("logs.txt", "a");
+
+    if(fp == NULL)
+    {
+        printf("Unable to open log file.\n");
+        return;
+    }
+
+    time(&now);
+
+    fprintf(fp, "Username: %s\n", username);
+    fprintf(fp, "Status: %s\n", status);
+    fprintf(fp, "Time: %s", ctime(&now));
+    fprintf(fp, "\n");
+
+    fclose(fp);
+}
+
 void login()
 {
     FILE *fp;
@@ -202,26 +225,30 @@ void login()
     if (found)
     {
     int otp;
-
+    
     printf("\nLogin Successful!\n");
 
     otp = generateOTP();
-
-    printf("\nGenerating OTP...\n");
-    printf("Your OTP is: %06d\n", otp);
+    
+    printf("OTP has been generated.\n");
+    printf("(For demonstration purposes, the OTP is displayed below.)\n");
+    printf("OTP: %06d\n", otp);
 
     if (verifyOTP(otp))
     {
+        saveLog(username, "SUCCESS");
         printf("\nAccess Granted!\n");
     }
     else
     {
+        saveLog(username, "FAILED (OTP)");
         printf("\nAccess Denied!\n");
     }
 
     }
     else
     {
+        saveLog(username, "FAILED (PASSWORD)");
         printf("\nInvalid Username or Password!\n");
     }
 }
