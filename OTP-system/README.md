@@ -1,17 +1,12 @@
 # Security System Mini Projects
 
-This repository contains two security-related mini projects developed in C language.
+This repository contains the mini project OTP based security system developed in C language.
 
-## Projects
-
-### 1. OTP Token Authentication System
+### OTP Token Authentication System
 - User Registration
 - Login Authentication
 - OTP Generation and Verification
 - Login Logs
-
-### 2. Keystroke Dynamics Authentication System
-- (Coming Soon)
 
 ## Language
 
@@ -23,4 +18,4 @@ This repository contains two security-related mini projects developed in C langu
 
 ## Author
 
-Sadia Afreen
+Sadia Afrin
